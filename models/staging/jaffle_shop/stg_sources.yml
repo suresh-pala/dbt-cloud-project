@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: jaffle_shop
+    database: snowflake
+    schema: information_schema
+    tables:
+      - name: views
+      - name: tables
+        columns:
+          - name: table_name
+            tests:
+              - not_null
