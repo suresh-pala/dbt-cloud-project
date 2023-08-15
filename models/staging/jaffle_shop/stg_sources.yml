@@ -9,5 +9,19 @@ sources:
       - name: tables
         columns:
           - name: table_name
+            description: contains table_name details
             tests:
               - not_null
+
+models:
+  - name: stg_orders
+    description: Orders table contain customer orders details
+    columns:
+      - name: status
+        description: "{{doc('order_status')}}"
+        tests:
+          - accepted_values:
+              values:
+                - P
+                - F
+                - O
